@@ -1,0 +1,33 @@
+.skill {
+  position: relative;
+  width: 133px;
+  height: 133px;
+}
+
+.skill-chart {
+  transform: rotate(180deg);
+}
+
+.skill__circle {
+  fill: transparent;
+
+  &_under {
+    stroke: gray;
+    stroke-width: 2;
+  }
+  &_above {
+    stroke: orange;
+    stroke-width: 6;
+  }
+}
+
+.skill__name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0.6;
+  text-align: center;
+}
