@@ -1,0 +1,15 @@
+.works-left
+  .slider
+    +image("content/1.jpg", "fullpic")
+    .slider__preview
+      ul.previews
+        - for (var i = 0; i < 4; i++)
+          li.previews__item
+            +image("content/1.jpg", "previews__pic")
+    .slider__buttons
+      .slider__button
+        button.slider-buttons__item.slider-buttons__item_slide_prev
+          +icon("scroll-arrow", "slider-button__scroll")
+        button.slider-buttons__item.slider-buttons__item_slide_next
+          +icon("scroll-arrow", "slider-button__scroll")
+  .slider__number 2

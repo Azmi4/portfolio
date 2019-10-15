@@ -1,0 +1,29 @@
+section.skills
+  .skills-img
+    +image("content/skills-hands.png", "skills-pic")
+
+  .container.skills__container
+    .skills__title
+      h2.section__title.skills-section__title Чем я могу быть полезен вам
+      .skills__desc
+        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+    .skills-user
+      -
+        var skills = [
+          {title: 'Front-end', skills: [{name: 'HTML5', percent: 75}, {name: 'CSS3', percent: 23}, {name: 'JavaScript', percent: 45}, {name: 'jQuery и VueJS', percent: 67}]},
+          {title: 'Workflow', skills: [{name: 'GIT', percent: 75}, {name: 'Terminal', percent: 23}, {name: 'Gulp', percent: 45}, {name: 'Webpack', percent: 67}]}
+        ]
+      each group in skills
+        .skills__row
+          .skills-group
+            .skills-group__title #{group.title}
+            .skills-group__items
+              each skill in group.skills
+                .skills-group__item
+                  .skill
+                    svg.skill-chart(viewBox="0 0 100 100")
+                      - var r = 47
+                      circle.skill__circle.skill__circle_under(cx="50" cy="50" r=r)
+                      circle.skill__circle.skill__circle_above(cx="50" cy="50" r=r stroke-dasharray=`${2 * Math.PI * r}` stroke-dashoffset=`${2 * Math.PI * r * (100 - skill.percent) / 100}`)
+                    .skill__name #{skill.name}

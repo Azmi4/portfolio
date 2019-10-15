@@ -1,0 +1,13 @@
+.works-right
+  .works__tags
+    ul.tags
+      - var tags = ['HTML', 'CSS', 'JavaScript']
+      each tag in tags
+        li.tags__item #{tag}
+  .works__text
+    h3.works__title Сайт школы образования
+    .works__desc-text
+      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+    a(href="#").iconed-link
+      +icon("Link", "iconed-link__icon")
+      .iconed-link__text Посмотреть сайт

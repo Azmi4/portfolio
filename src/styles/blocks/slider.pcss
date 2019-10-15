@@ -1,0 +1,45 @@
+.slider {
+  position: relative;
+  display: flex;
+}
+
+.slider__preview {
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+}
+
+.slider__buttons {
+  position: relative;
+}
+
+.slider__button {
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  background: #353e4e;
+  height: 100px;
+  width: 50px;
+}
+
+.slider-buttons__item {
+  width: 50px;
+  height: 50px;
+
+  &_slide_next {
+    transform: rotate(180deg);
+  }
+}
+
+.slider-button__scroll {
+  width: 8px;
+  height: 10px;
+  fill: #fff;
+}
+
+.slider__number {
+  font-size: 400px;
+  font-weight: 800;
+  color: #e6e6e6;
+  margin-left: -50px;
+}
