@@ -1,21 +1,28 @@
+.nav {
+  height: 100%;
+}
+
 .nav__list {
   display: flex;
+  height: 100%;
 }
 
 .nav__item {
   margin-right: 60px;
+  display: flex;
+  align-items: center;
 
   &:last-child {
     margin-right: 0;
+  }
+
+  &:hover {
+    border-bottom: 2px solid orange;
+    color: orange;
   }
 }
 
 .nav__link {
   text-decoration: none;
   opacity: 0.8;
-
-  &:hover {
-    color: orange;
-    transition: .3s
-  }
 }
