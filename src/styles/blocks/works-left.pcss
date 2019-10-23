@@ -1,4 +1,14 @@
 .works-left {
   width: сalc(100% - 325px - 20px);
-  display: flex;
+  position: relative;
+  padding: 0 11% 0 0;
+  @include desktop {
+    padding: 0 14% 0 0;
+  }
+  @include tablets {
+    padding: 0 11% 10% 0;
+  }
+  @include phones {
+    padding: 0 0 20% 0;
+  }
 }

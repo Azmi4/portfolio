@@ -5,9 +5,14 @@
   font-weight: bold;
   align-items: center;
   text-decoration: none;
-
   &:hover {
     text-decoration: underline;
+  }
+  @include tablets {
+    justify-content: center;
+  }
+  @include phones {
+    justify-content: flex-start;
   }
 }
 

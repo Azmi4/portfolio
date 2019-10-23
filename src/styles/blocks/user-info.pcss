@@ -1,16 +1,39 @@
 .user-info {
   display: flex;
   padding: 6% 22% 0;
+  @include desktop {
+    padding: 0% 0% 3% 23%;
+  }
+  @include tablets {
+    flex-direction: column;
+    padding: 0 20%;
+    text-align: center;
+  }
 }
 
 .user-info__desc {
   font-size: 18px;
   font-weight: 600;
   opacity: 0.7;
+  @include tablets {
+    padding: 0 35%;
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  @include phones {
+    font-size: 14px;
+    padding: 0 20%;
+  }
 }
 
 .user-info__username {
   font-size: 72px;
   font-weight: 800;
   line-height: 0.9;
+  @include tablets {
+    font-size: 48px;
+  }
+  @include phones {
+    font-size: 36px;
+  }
 }

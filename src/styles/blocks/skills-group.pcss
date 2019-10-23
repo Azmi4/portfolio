@@ -2,16 +2,35 @@
   font-size: 24px;
   font-weight: bold;
   padding-bottom: 5%;
+  @include tablets {
+    text-align: center;
+  }
+  @include phones {
+    font-size: 18px;
+  }
 }
 
 .skills-group__items {
   display: flex;
+  @include phones {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .skills-group__item {
-  margin-right: 70px;
-
+  margin-right: 60px;
   &:last-child {
     margin-right: 0;
+  }
+  @include desktop {
+    margin-right: 41px;
+  }
+  @include phones {
+    margin-right: 40px;
+    margin-bottom: 30px;
+    &:nth-last-child(odd) {
+      margin-right: 0;
+    }
   }
 }

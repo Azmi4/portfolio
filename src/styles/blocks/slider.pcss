@@ -1,12 +1,18 @@
 .slider {
   position: relative;
   display: flex;
+  @include phones {
+    margin: 0 -27px;
+  }
 }
 
 .slider__preview {
   position: absolute;
   right: 0;
   bottom: 60px;
+  @include phones {
+    display: none;
+  }
 }
 
 .slider__buttons {
@@ -20,16 +26,18 @@
   background: #353e4e;
   height: 100px;
   width: 50px;
+  @include phones {
+    left: -50px;
+    bottom: 0;
+  }
 }
 
 .slider-buttons__item {
   width: 50px;
   height: 50px;
-
   &_slide_next {
     transform: rotate(180deg);
   }
-
   &:hover {
     background: #ff9d00;
   }
@@ -45,5 +53,19 @@
   font-size: 400px;
   font-weight: 800;
   color: #e6e6e6;
-  margin-left: -50px;
+  position: absolute;
+  bottom: 5%;
+  right: -1%;
+  z-index: -1;
+  @include desktop {
+    bottom: 7%;
+  }
+  @include tablets {
+    bottom: 22%;
+    right: -8%;
+    font-size: 385px;
+  }
+  @include phones {
+    display: none;
+  }
 }

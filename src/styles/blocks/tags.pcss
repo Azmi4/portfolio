@@ -1,5 +1,11 @@
 .tags {
   display: flex;
+  @include tablets {
+    justify-content: center;
+  }
+  @include phones {
+    justify-content: flex-start;
+  }
 }
 
 .tags__item {
@@ -10,7 +16,6 @@
   font-size: 15px;
   font-weight: 600;
   text-align: center;
-
   &:last-child {
     margin-right: 0;
   }
