@@ -35,7 +35,7 @@
 .slider-buttons__item {
   width: 50px;
   height: 50px;
-  &_slide_next {
+  &_slide_prev {
     transform: rotate(180deg);
   }
   &:hover {
@@ -50,13 +50,19 @@
 }
 
 .slider__number {
-  font-size: 400px;
-  font-weight: 800;
   color: #e6e6e6;
-  position: absolute;
-  bottom: 5%;
-  right: -1%;
+  position: relative;
   z-index: -1;
+  &::before {
+    content: attr(data-slide);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-129%);
+    right: -17%;
+    line-height: 1;
+    font-size: 400px;
+    font-weight: 800;
+  }
   @include desktop {
     bottom: 7%;
   }

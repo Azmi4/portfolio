@@ -8,6 +8,7 @@
 
 .parallax-header__item {
   position: absolute;
+  width: 100%;
   &__1 {
     top: 0;
     left: 0;
@@ -16,10 +17,40 @@
     margin-top: 530px;
     top: 0;
     left: 0;
+    @include desktopSuperHd {
+      margin-top: 780px;
+    }
+    @include desktop {
+      margin-top: 390px;
+    }
+    @include tablets {
+      margin-top: 265px;
+    }
+    @include phones {
+      margin-top: 110px;
+    }
   }
   &__3 {
     margin-top: 960px;
     top: 0;
     left: 0;
+    @include desktopSuperHd {
+      margin-top: 1410px;
+    }
+    @include desktop {
+      margin-top: 705px;
+    }
+    @include tablets {
+      margin-top: 480px;
+    }
+    @include phones {
+      margin-top: 200px;
+    }
+  }
+}
+
+.paralax-header__img {
+  @include desktopSuperHd {
+    width: 100%;
   }
 }

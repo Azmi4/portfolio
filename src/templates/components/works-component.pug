@@ -3,6 +3,8 @@ script(type="text/x-template")#slider-container
     display(
       :works="works"
       :current-work="currentWork"
+      :current-index="currentIndex"
+      @slide="handleSlide"
     )
     info(
       :current-work="currentWork"
@@ -14,9 +16,12 @@ script(type="text/x-template")#slider-display
       img(:src="currentWork.photo").fullpic
       thumbs(
         :works="works"
+        :current-work="currentWork"
       )
-      btns()
-    .slider__number 2
+      btns(
+        @slide="$emit('slide', $event)"
+      )
+    .slider__number(:data-slide='currentIndex + 1')
 
 script(type="text/x-template")#slider-thumbs
   .slider__preview
@@ -24,31 +29,32 @@ script(type="text/x-template")#slider-thumbs
       li.previews__item(
         v-for="work in works"
         :key="work.id"
+        :class="{previews__active: work.id === currentWork.id}"
       )
         img(:src="work.photo").previews__pic
 
 script(type="text/x-template")#slider-btns
   .slider__buttons
     .slider__button
-      button.slider-buttons__item.slider-buttons__item_slide_prev
+      button.slider-buttons__item.slider-buttons__item_slide_next(@click.prevent="$emit('slide', 'next')")
         +icon("scroll-arrow", "slider-button__scroll")
-      button.slider-buttons__item.slider-buttons__item_slide_next
+      button.slider-buttons__item.slider-buttons__item_slide_prev(@click.prevent="$emit('slide', 'prev')")
         +icon("scroll-arrow", "slider-button__scroll")    
 
 script(type="text/x-template")#slider-info
   .works-right
-    tags()
+    tags(
+      :tags="tagsArray"
+    )
     .works__text
-      h3.works__title Сайт школы образования
+      h3.works__title {{currentWork.title}}
       .works__desc-text
-        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-        a(href="#").iconed-link
+        p {{currentWork.desc}}
+        a(:href="currentWork.link").iconed-link
           +icon("Link", "iconed-link__icon")
           .iconed-link__text Посмотреть сайт
 
 script(type="text/x-template")#slider-tags
   .works__tags
-    ul.tags
-      - var tags = ['HTML', 'CSS', 'JavaScript']
-      each tag in tags
-        li.tags__item #{tag}
+    ul.tags(v-for="tag in tags" :key="tag")
+      li.tags__item {{tag}}
