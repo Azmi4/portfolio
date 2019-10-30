@@ -8,3 +8,4 @@ import "./scripts/parallax-header";
 import "./scripts/hamburger";
 import "./scripts/reviews";
 import "./scripts/works";
+import "./scripts/contact";

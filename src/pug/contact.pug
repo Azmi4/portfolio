@@ -1,22 +1,46 @@
 section.contact
   h2.contact__title Связаться со мной
-  form.contact__form.form
+  form.contact__form.form(@submit.prevent="submitForm")
     .form__row
-      label.form__label.form__label_name
+      label.form__label.form__label_name(:class="{error: !nameValid}")
         span.form__label-title Введите ваше имя
         .form__input-hover
-          input.form__input(type="text" placeholder="Имя" name="name")
           +icon("Avatar", "form__label-icon")
-      label.form__label.form__label_email
+        input.form__input.form__input_name(
+          type="text"
+          name="name"
+          @input="validateName"
+          placeholder="Имя"
+          onFocus="this.placeholder=''"
+        )
+        .contact__tooltip {{nameError}}
+      label.form__label.form__label_email(:class="{error: !emailValid}")
         span.form__label-title Введите ваш email
         .form__input-hover
-          input.form__input(type="text" placeholder="@email" name="name")
           +icon("Envelope", "form__label-icon")
+        input.form__input.form__input_email(
+          type="text"
+          name="name"
+          @input="validateEmail"
+          placeholder="@email"
+          onFocus="this.placeholder=''"
+        )
+        .contact__tooltip {{emailError}}
     .form__row
-      label.form__label
+      label.form__label.form__label_message(:class="{error: !messageValid}")
         span.form__label-title Сообщение к письму
         .form__input-hover
-          input.form__input.form__input-message(type="textarea" placeholder="Требуется ваша помощь в создании сайта.Интересуют сроки и цена вопроса" name="message")
           +icon("Chat", "form__label-icon")
+        textarea.form__input.form__input-message(
+          name="message"
+          @input="validateMessage"
+          placeholder="Требуется ваша помощь в создании сайта.Интересуют сроки и цена вопроса"
+          onFocus="this.placeholder=''"
+        )
+        .contact__tooltip {{messageError}}
     .form__row
-      button.form__button Отправить
+      button(@click.prevent="submitForm").form__button Отправить
+  .overlay(:class="{disabled: overlayHidden}" @click="hideOverlay")
+    .overlay__content
+      .overlay__message {{resultMessage}}
+      button.overlay__close(@click="hideOverlay") Закрыть

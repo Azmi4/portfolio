@@ -62,16 +62,18 @@
     line-height: 1;
     font-size: 400px;
     font-weight: 800;
-  }
-  @include desktop {
-    bottom: 7%;
-  }
-  @include tablets {
-    bottom: 22%;
-    right: -8%;
-    font-size: 385px;
-  }
-  @include phones {
-    display: none;
+    @include desktopSuperHd {
+      right: -20%;
+    }
+    @include desktop {
+      right: -24%;
+    }
+    @include tablets {
+      right: -25%;
+      transform: translateY(-128%);
+    }
+    @include phones {
+      display: none;
+    }
   }
 }

@@ -1,7 +1,7 @@
 .contact {
   padding-right: 14%;
   @include tablets {
-      padding: 0;
+    padding: 0;
   }
 }
 
@@ -16,5 +16,25 @@
   }
   @include phones {
     font-size: 24px;
+  }
+}
+
+.contact__tooltip {
+  padding: 5px;
+  font-size: 14px;
+  background: #69010b;
+  position: absolute;
+  bottom: -29px;
+  left: 40px;
+  display: none;
+  z-index: 20;
+  &:after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 60px;
+    border-style: solid;
+    border-width: 0 7.5px 10px 7.5px;
+    border-color: transparent transparent #69010b transparent;
   }
 }
