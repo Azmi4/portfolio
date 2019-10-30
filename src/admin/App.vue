@@ -350,6 +350,9 @@
 .form__title-icon {
   display: flex;
   align-items: center;
+  @include phones {
+    margin-right: 15px;
+  }
 }
 
 .form__title-edit {
@@ -448,6 +451,15 @@
   }
   @include tablets {
     margin-right: 20px;
+  }
+  @include phones {
+    margin-right: 10px;
+  }
+}
+
+.form__skill-buttons {
+  @include phones {
+    margin-right: 15px;
   }
 }
 
@@ -777,7 +789,7 @@
   box-shadow: 0 0 10px 0 #ccc;
   background: #fff;
   @include desktopSuperHd {
-    width: 437px;
+    width: 415px;
   }
   @include desktopHd {
     width: 397px;
@@ -962,7 +974,7 @@
   box-shadow: 0 0 10px 0 #ccc;
   background: #fff;
   @include desktopSuperHd {
-    width: 437px;
+    width: 415px;
   }
   @include desktopHd {
     width: 397px;
