@@ -236,6 +236,7 @@
   background: url("../images/content/bg/MountainBaloon.jpg") no-repeat center
     top / cover;
   color: #000;
+  /* z-index: -10; */
 }
 
 .section__title {
@@ -302,16 +303,16 @@
   box-shadow: 0 0 10px 0 #ccc;
   min-height: 390px;
   @include desktopSuperHd {
-    min-width: 525px;
+    min-width: 590px;
   }
   @include desktopHd {
-    min-width: 525px;
+    min-width: 540px;
   }
   @include desktop {
-    min-width: 525px;
+    min-width: 577px;
   }
   @include tablets {
-    min-width: 345px;
+    min-width: 385px;
   }
   @include phones {
     padding: 0;
@@ -362,6 +363,12 @@
     )
     center center no-repeat;
   margin-right: 40px;
+  @include desktopHd {
+    margin-right: 30px;
+  }
+  @include desktop {
+    margin-right: 33px;
+  }
   @include tablets {
     margin-right: 0;
   }
@@ -413,9 +420,8 @@
 .form__skill-wrapper {
   display: flex;
   margin-bottom: 15px;
-  @include phones {
-    justify-content: space-around;
-  }
+  justify-content: space-around;
+  
 }
 
 .input {
@@ -423,18 +429,15 @@
 }
 
 .form__skill-name {
-  margin-right: 147px;
+  margin-right: 130px;
   @include tablets {
     margin-right: 20px;
     width: 155px;
   }
-  @include phones {
-    /* margin-right: 60px; */
-  }
 }
 
 .form__skill-value-wrapper {
-  margin-right: 55px;
+  margin-right: 35px;
   position: relative;
   &:after {
     content: "%";
@@ -497,6 +500,7 @@
   padding: 20px;
   background: #fff;
   margin-bottom: 30px;
+  margin-right: 33px;
   @include phones {
     padding: 0;
     width: 100vw;
@@ -769,9 +773,21 @@
 
 .works__item {
   margin: 0 30px 30px 0;
-  width: 340px;
   min-height: 555px;
   box-shadow: 0 0 10px 0 #ccc;
+  background: #fff;
+  @include desktopSuperHd {
+    width: 437px;
+  }
+  @include desktopHd {
+    width: 397px;
+  }
+  @include desktop {
+    width: 374px;
+  }
+  @include tablets {
+    width: 385px;
+  }
   @include phones {
     margin: 0 0 30px 0;
     width: 100%;
@@ -833,6 +849,7 @@
   padding: 20px;
   background: #fff;
   margin-bottom: 30px;
+  margin-right: 33px;
   @include phones {
     width: 100vw;
     transform: translateX(-7.5%);
@@ -929,10 +946,6 @@
 }
 //////////////////////////////////////////////////////////
 
-/* .reviews__wrapper {
-  
-} */
-
 .reviews__list {
   display: flex;
   flex-wrap: wrap;
@@ -944,9 +957,22 @@
 
 .reviews__item {
   min-height: 380px;
-  width: 340px;
+  width: 374px;
   margin: 0 30px 30px 0;
   box-shadow: 0 0 10px 0 #ccc;
+  background: #fff;
+  @include desktopSuperHd {
+    width: 437px;
+  }
+  @include desktopHd {
+    width: 397px;
+  }
+  @include desktop {
+    width: 374px;
+  }
+  @include tablets {
+    width: 385px;
+  }
   @include phones {
     width: 100%;
     margin: 0 0 30px 0;
