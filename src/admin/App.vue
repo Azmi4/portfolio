@@ -248,19 +248,20 @@
   }
 }
 
-.about-me__title {
-  margin-right: 55px;
-  @include phones {
-    margin-right: 0;
-    margin-bottom: 30px;
-  }
-}
-
 .title {
   font-size: 21px;
   font-weight: bold;
   @include phones {
     font-size: 18px;
+  }
+}
+///////////////////////////////////////
+
+.about-me__title {
+  margin-right: 55px;
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 }
 
@@ -424,7 +425,6 @@
   display: flex;
   margin-bottom: 15px;
   justify-content: space-around;
-  
 }
 
 .input {
@@ -1043,282 +1043,8 @@
 }
 </style>
 
-
 <template lang="pug">
 
-  .maincontent-admin
-    .authorization__wrapper
-      .authorization
-        .authorization__title
-          .authorization__title-text Авторизация
-        form.form__authorization
-          .form__authorization-row
-            label.form__authorization-label.form__label-login
-              span.form__author-title.form__login-title Логин
-              .form__input-hover
-                input.form__author-input(type="text" name="name")
-                .form__login-icon.form__icon
-            label.form__authorization-label.form__label-password
-              span.form__author-title.form__password-title Пароль
-              .form__input-hover
-                input.form__author-input(type="password" name="password")
-                .form__password-icon.form__icon
-          .form__authorization-button
-            button(type="button").form__author-button Отправить
-        button(type="button").authorization__button
-          .authorization__close
-    header.header__panel
-      .container
-        .header__user-panel
-          .header__left
-            .header__user
-              .header__user-avatar
-                img(src="../images/content/ya.jpg").header__user-avatar-img
-              .header__user-name Азамат Арслангараев
-            .header__text Панель администрирования
-          .header__right
-            a(href="#").header__exit Выйти
-    nav.nav-admin
-      .container
-        - var menu = ['Обо мне', 'Работы', 'Отзывы']
-          ul.nav__list
-            each item in menu
-              li.nav__item
-                a.nav__link #{item}
-    .general-section
-      router-about
-      section.works-block
-        .container
-          .section__title
-            h2.works__title.title Блок «Работы»
-          .work__editing-block
-            h4.work__editing-title.min-title Редактирование работы
-            hr.work-divider.divider
-            .work__content
-              .work__left
-                .work__picture
-                  .work__picture-info
-                    .work__picture-text Перетащите или загрузите для загрузки изображения
-                    button(type='button').work__button
-                      .work__button-text Загрузить
-              .work__right
-                form.work__form.form
-                  .work__form-row
-                    label.form__label.work__form-label_name
-                      span.form__label-title Название
-                      input.work__form-input.form__input(type="text" name="name")
-                    label.form__label.work__form-label_email
-                      span.form__label-title Ссылка
-                      input.work__form-input.form__input(type="text" name="name")
-                  .work__form-row
-                    label.form__label
-                      span.form__label-title Описание
-                      textarea.work__form-textarea(type="textarea" name="message")
-                  .work__form-row.work__add-tag
-                    label.form__label.work__form-label_name
-                      span.form__label-title Добавление тэга
-                      input.work__form-input.form__input(type="text" name="name")
-                  .work__form-buttons
-                    button(type='button').work__form-button.form__button-cancel Отмена
-                    button(type='button').work__form-button.form__button-save Сохранить
-          .works__wrapper
-            ul.works__list
-              li.works__item.works__item-mobile
-                button(type='button').button-add
-                  .button-add__content
-                    .button-add__icon
-                    p.button-add__text Добавить работу
-              li.works__item
-                .works__picture
-                  img(src="../images/content/1.jpg").works__img
-                  .works__tags-wrapper
-                    .works__tag HTML5
-                    .works__tag CSS3
-                    .works__tag JavaScript
-                .works__content-wrapper
-                  h4.works__content-title Сайт школы образования
-                  .works__content
-                    .works__content-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    a(href="http://loftschool.ru").works__content-link Сайт школы
-                  .buttons__edit-del
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Править
-                      .buttons__btn-edit-icon
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Удалить
-                      .buttons__btn-del-icon
-              li.works__item
-                .works__picture
-                  img(src="../images/content/1.jpg").works__img
-                  .works__tags-wrapper
-                    .works__tag HTML5
-                    .works__tag CSS3
-                    .works__tag JavaScript
-                .works__content-wrapper
-                  h4.works__content-title Сайт школы образования
-                  .works__content
-                    .works__content-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    a(href="http://loftschool.ru").works__content-link Сайт школы
-                  .buttons__edit-del
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Править
-                      .buttons__btn-edit-icon
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Удалить
-                      .buttons__btn-del-icon
-              li.works__item
-                .works__picture
-                  img(src="../images/content/1.jpg").works__img
-                  .works__tags-wrapper
-                    .works__tag HTML5
-                    .works__tag CSS3
-                    .works__tag JavaScript
-                .works__content-wrapper
-                  h4.works__content-title Сайт школы образования
-                  .works__content
-                    .works__content-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    a(href="http://loftschool.ru").works__content-link Сайт школы
-                  .buttons__edit-del
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Править
-                      .buttons__btn-edit-icon
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Удалить
-                      .buttons__btn-del-icon
-              li.works__item
-                .works__picture
-                  img(src="../images/content/1.jpg").works__img
-                  .works__tags-wrapper
-                    .works__tag HTML5
-                    .works__tag CSS3
-                    .works__tag JavaScript
-                .works__content-wrapper
-                  h4.works__content-title Сайт школы образования
-                  .works__content
-                    .works__content-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    a(href="http://loftschool.ru").works__content-link Сайт школы
-                  .buttons__edit-del
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Править
-                      .buttons__btn-edit-icon
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Удалить
-                      .buttons__btn-del-icon
-      section.reviews-block
-        .container
-          .section__title
-            h2.reviews__title.title Блок «Отзывы»
-          .reviews__new-block
-            h4.reviews__new-title.min-title Новый отзыв
-            hr.reviews-divider.divider
-            .reviews__content
-              .reviews__left
-                .reviews__picture
-                  .reviews__picture-add
-                    .reviews__picture-icon
-                  button(type='button').reviews__picture-button
-                    .reviews__picture-text Добавить фото
-              .reviews__right
-                form.reviews__form.form
-                  .reviews__form-row
-                    label.form__label.reviews__form-label_name
-                      span.form__label-title Имя автора
-                      input.reviews__form-input.form__input(type="text" name="name")
-                    label.form__label.reviews__form-label_email
-                      span.form__label-title Титул автора
-                      input.reviews__form-input.form__input(type="text" name="name")
-                  .reviews__form-row
-                    label.form__label
-                      span.form__label-title Отзыв
-                      textarea.reviews__form-textarea(type="textarea" name="message")
-                  .reviews__form-buttons
-                    button(type='button').reviews__form-button.form__button-cancel Отмена
-                    button(type='button').reviews__form-button.form__button-save Сохранить
-          .reviews__wrapper
-            ul.reviews__list           
-              li.reviews__item.reviews__item-mobile
-                button(type='button').button-add
-                  .button-add__content
-                    .button-add__icon
-                    p.button-add__text Добавить отзыв
-              li.reviews__item
-                .reviews__row
-                  .reviews__person
-                    .reviews__avatar
-                      img(src="../images/content/VladimirS.jpg").reviews__avatar-img
-                    .reviews__author
-                      h4.reviews__author-name Владимир Сабанцев
-                      .reviews__author-occupation Преподаватель
-                  hr.reviews-divider
-                  .reviews__content
-                    .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                  .buttons__edit-del
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Править
-                      .buttons__btn-edit-icon
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Удалить
-                      .buttons__btn-del-icon
-              li.reviews__item
-                .reviews__row
-                  .reviews__person
-                    .reviews__avatar
-                      img(src="../images/content/DimaK.jpg").reviews__avatar-img
-                    .reviews__author
-                      h4.reviews__author-name Ковальчук Дмитрий
-                      .reviews__author-occupation Основатель Loftschool
-                  hr.reviews-divider
-                  .reviews__content
-                    .reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .buttons__edit-del
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Править
-                      .buttons__btn-edit-icon
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Удалить
-                      .buttons__btn-del-icon
-              li.reviews__item
-                .reviews__row
-                  .reviews__person
-                    .reviews__avatar
-                      img(src="../images/content/VladimirS.jpg").reviews__avatar-img
-                    .reviews__author
-                      h4.reviews__author-name Владимир Сабанцев
-                      .reviews__author-occupation Преподаватель
-                  hr.reviews-divider
-                  .reviews__content
-                    .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                  .buttons__edit-del
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Править
-                      .buttons__btn-edit-icon
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Удалить
-                      .buttons__btn-del-icon
-              li.reviews__item
-                .reviews__row
-                  .reviews__person
-                    .reviews__avatar
-                      img(src="../images/content/DimaK.jpg").reviews__avatar-img
-                    .reviews__author
-                      h4.reviews__author-name Ковальчук Дмитрий
-                      .reviews__author-occupation Основатель Loftschool
-                  hr.reviews-divider
-                  .reviews__content
-                    .reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  .buttons__edit-del
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Править
-                      .buttons__btn-edit-icon
-                    button(type='button').buttons__edit-del-btn
-                      .buttons__btn-text Удалить
-                      .buttons__btn-del-icon
-              
-              
-</template>
+  router-view
 
-<script>
-export default {
-  
-}
-</script>
+</template>
