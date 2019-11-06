@@ -63,7 +63,7 @@ new Vue({
           email: this.email,
           message: this.message
         };
-        fetch("src/data/sucess.txt", {
+        fetch("src/data/success.txt", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(userData)

@@ -1,7 +1,9 @@
-import Vue from 'vue';
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "../scripts/router";
 
 new Vue({
   el: "#app-root",
+  router,
   render: h => h(App)
 });
