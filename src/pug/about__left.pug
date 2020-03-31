@@ -1,0 +1,15 @@
+.about__left
+  .user
+    .avatar.user__avatar
+      +image("content/user-aza.jpg", "avatar__pic")
+    ul.user__desc
+      - 
+        var items = [
+          ['Проживаю:', 'Уфа'],
+          ['Возраст:', '25 лет'],
+          ['Родился:', '18 июля 1994']
+        ]
+      each item in items
+        li.user__desc-item
+          .user__key #{item[0]}
+          .user__value #{item[1]}

@@ -1,0 +1,27 @@
+.previews {
+  display: flex;
+}
+
+.previews__item {
+  width: 177px;
+  height: 100px;
+  margin-right: 1px;
+  &:hover {
+    background: #ff9d00;
+  }
+}
+
+.previews__active {
+  outline: 1px solid #ff9d00;
+}
+
+.previews__pic {
+  width: 100%;
+  @include desktop {
+    width: 176px;
+    height: 100px;
+  }
+  &:hover {
+    opacity: .6;
+  }
+}

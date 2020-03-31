@@ -1,0 +1,24 @@
+.iconed-link {
+  display: flex;
+  color: #586fd3;
+  font-size: 18px;
+  font-weight: bold;
+  align-items: center;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  @include tablets {
+    justify-content: center;
+  }
+  @include phones {
+    justify-content: flex-start;
+  }
+}
+
+.iconed-link__icon {
+  width: 20px;
+  height: 15px;
+  fill: #586fd3;
+  margin-right: 20px;
+}

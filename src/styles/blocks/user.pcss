@@ -1,0 +1,38 @@
+.user {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  @include phones {
+    width: 100%;
+  }
+}
+
+.user__avatar {
+  margin-bottom: 75px;
+  @include phones {
+    margin-bottom: 30px;
+  }
+}
+
+.user__desc {
+  font-weight: 600;
+  @include tablets {
+    font-size: 14px;
+  }
+}
+
+.user__desc-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+  letter-spacing: 1px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.user__key {
+  opacity: 0.4;
+  margin-right: 20px;
+}

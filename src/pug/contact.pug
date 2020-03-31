@@ -1,0 +1,22 @@
+section.contact
+  h2.contact__title Связаться со мной
+  form.contact__form.form
+    .form__row
+      label.form__label.form__label_name
+        span.form__label-title Введите ваше имя
+        .form__input-hover
+          input.form__input(type="text" placeholder="Имя" name="name")
+          +icon("Avatar", "form__label-icon")
+      label.form__label.form__label_email
+        span.form__label-title Введите ваш email
+        .form__input-hover
+          input.form__input(type="text" placeholder="@email" name="name")
+          +icon("Envelope", "form__label-icon")
+    .form__row
+      label.form__label
+        span.form__label-title Сообщение к письму
+        .form__input-hover
+          input.form__input.form__input-message(type="textarea" placeholder="Требуется ваша помощь в создании сайта.Интересуют сроки и цена вопроса" name="message")
+          +icon("Chat", "form__label-icon")
+    .form__row
+      button.form__button Отправить

@@ -1,0 +1,46 @@
+.works-right {
+  width: 325px;
+  @include tablets {
+    width: 100%;
+    text-align: center;
+    padding: 0 19%;
+  }
+  @include phones {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.works__tags {
+  padding-bottom: 9%;
+  @include tablets {
+    padding-bottom: 3%;
+  }
+  @include phones {
+    padding-bottom: 7%;
+  }
+}
+
+.works__title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 12%;
+  @include tablets {
+    padding-bottom: 3%;
+  }
+  @include phones {
+    font-size: 24px;
+  }
+}
+
+.works__desc-text {
+  font-weight: 600;
+  line-height: 1.8;
+  padding-bottom: 11%;
+  @include tablets {
+    padding-bottom: 3%;
+  }
+  @include phones {
+    padding-bottom: 7%;
+  }
+}

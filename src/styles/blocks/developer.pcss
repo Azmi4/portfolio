@@ -1,0 +1,27 @@
+.developer {
+  @include desktop {
+    padding-right: 25%;
+  }
+  @include phones {
+    padding-right: 0;
+  }
+}
+
+.developer-username {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  @include phones {
+    margin-bottom: 5px;
+  }
+}
+
+.developer-desc {
+  line-height: 1.8;
+  opacity: .4;
+  @include tablets {
+    font-size: 14px;
+  }
+}
